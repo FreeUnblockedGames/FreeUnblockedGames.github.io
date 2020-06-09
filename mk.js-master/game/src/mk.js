@@ -1,4 +1,4 @@
-;(function () {
+LOOK @ UR APP BAR!!! LOL;(function () {
 
   var mk = {};
 
@@ -14,7 +14,6 @@
     STEP_DURATION: 80,
     PLAYER_TOP   : 230,
     BLOCK_DAMAGE : 0.2
-  };
 
   mk.controllers = {};
 
