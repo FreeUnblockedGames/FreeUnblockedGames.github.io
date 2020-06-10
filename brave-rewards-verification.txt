@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: freeunblockedgames.github.io
+Token: e140aa59651389c8942fef91e7aa5bd664e20b591104dd28abb7112507984939
