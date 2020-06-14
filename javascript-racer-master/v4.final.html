@@ -1,13 +1,13 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 
 <html>
 <head>
   <title>Javascript Racer - v4 (final)</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <link href="common.css" rel="stylesheet" type="text/css" />
-</head> 
+</head>
 
-<body> 
+<body>
 
   <table id="controls">
     <tr>
@@ -70,7 +70,7 @@
   <div id="racer">
     <div id="hud">
       <span id="speed"            class="hud"><span id="speed_value" class="value">0</span> mph</span>
-      <span id="current_lap_time" class="hud">Time: <span id="current_lap_time_value" class="value">0.0</span></span> 
+      <span id="current_lap_time" class="hud">Time: <span id="current_lap_time_value" class="value">0.0</span></span>
       <span id="last_lap_time"    class="hud">Last Lap: <span id="last_lap_time_value" class="value">0.0</span></span>
       <span id="fast_lap_time"    class="hud">Fastest Lap: <span id="fast_lap_time_value" class="value">0.0</span></span>
     </div>
@@ -104,7 +104,7 @@
     var treeOffset     = 0;                       // current tree scroll offset
     var segments       = [];                      // array of road segments
     var cars           = [];                      // array of cars on the road
-    var stats          = Game.stats('fps');       // mr.doobs FPS counter
+    var stats          = Game.stats('fps');       // FPS counter
     var canvas         = Dom.get('canvas');       // our canvas...
     var ctx            = canvas.getContext('2d'); // ...and its drawing context
     var background     = null;                    // our background image (loaded below)
@@ -124,13 +124,13 @@
     var fogDensity     = 5;                       // exponential fog density
     var position       = 0;                       // current camera Z position (add playerZ to get player's absolute Z position)
     var speed          = 0;                       // current speed
-    var maxSpeed       = segmentLength/step;      // top speed (ensure we can't move more than 1 segment in a single frame to make collision detection easier)
-    var accel          =  maxSpeed/5;             // acceleration rate - tuned until it 'felt' right
+    var maxSpeed       = segmentLength/step*2;   //*step only   // top speed (ensure we can't move more than 1 segment in a single frame to make collision detection easier)
+    var accel          =  maxSpeed/9;             // acceleration rate - tuned until it 'felt' right
     var breaking       = -maxSpeed;               // deceleration rate when braking
     var decel          = -maxSpeed/5;             // 'natural' deceleration rate when neither accelerating, nor braking
     var offRoadDecel   = -maxSpeed/2;             // off road deceleration is somewhere in between
     var offRoadLimit   =  maxSpeed/4;             // limit when off road deceleration no longer applies (e.g. you can always go at least this speed even when off road)
-    var totalCars      = 200;                     // total number of cars on the road
+    var totalCars      = 200;    //200                 // total number of cars on the road
     var currentLapTime = 0;                       // current lap time
     var lastLapTime    = null;                    // last lap time
 
@@ -409,7 +409,7 @@
     }
 
     function findSegment(z) {
-      return segments[Math.floor(z/segmentLength) % segments.length]; 
+      return segments[Math.floor(z/segmentLength) % segments.length];
     }
 
     //=========================================================================
@@ -470,7 +470,7 @@
       height = height || ROAD.HILL.NONE;
       addRoad(num, num, num, curve, height);
     }
-        
+
     function addLowRollingHills(num, height) {
       num    = num    || ROAD.LENGTH.SHORT;
       height = height || ROAD.HILL.LOW;
@@ -581,7 +581,7 @@
           offset = side * (1.5 + Math.random());
           addSprite(n + Util.randomInt(0, 50), sprite, offset);
         }
-          
+
       }
 
     }
@@ -684,5 +684,5 @@
 
   </script>
 
-</body> 
+</body>
 </html>
