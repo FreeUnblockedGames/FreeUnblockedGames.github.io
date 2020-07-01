@@ -12,7 +12,7 @@
     <header>
       <nav style="background-color: White; padding: 20px; border:3px; border-style:solid; border-color: DodgerBlue; padding: 1.3em; margin: -9px;">
           <span><a style="color: DodgerBlue; font-size: 25px; Padding: 20px;" href="index.html">Unblocked Games</a></span>
-          <span><a style="color: White; font-size: 25px; background-color: DodgerBlue; border-radius: 12px; Padding: 20px; left-margin: 25px;" href="my_games.html">My Games</a></span>
+          <span><a style="color: White; font-size: 25px; background-color: DodgerBlue; border-radius: 12px; Padding: 20px;" href="my_games.html">My Games</a></span>
           <span><a style="color: DodgerBlue; font-size: 25px; Padding: 20px;" href="giveaways.html">Giveaways</a></span>
         </nav>
     </header>
@@ -20,6 +20,14 @@
       <h1 style="text-align: center; font-size: 50px">My Games</h1>
       <p style="text-align: center; font-size: 30px">Website Made By Luis Carrasco Using Github Pages</p>
       <p style="text-align: center; font-size: 20px">This is a list of the games that I have made. I would really aprecciate it if you donated, as I am non profit right now. Thanks!</p>
+      <center><button style="margin-bottom: 25px" id=buy_button">Buy My Game!</button></center>
+      <script type="text/javascript" src="https://static.itch.io/api.js"></script>
+      <script type="text/javascript">
+        Itch.attachBuyButton(document.getElementById("buy_button"), {
+          user: "Luis_Beast",
+          game: "HexGL"
+        });
+      </script>
       <center><iframe frameborder="0" src="https://itch.io/embed/668256" width="552" height="167"><a href="https://luis-beast.itch.io/racermaster">HTML Car Race Template by Luis_Beast</a></iframe></center>
       <center><iframe frameborder="0" src="https://itch.io/embed/671782" width="552" height="167"><a href="https://luis-beast.itch.io/hexgl">HexGL by Luis_Beast</a></iframe></center>
     </main>
